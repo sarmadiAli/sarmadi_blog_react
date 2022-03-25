@@ -1,0 +1,4 @@
+@mixin bg($color1, $color2) {
+    // code here
+    background: linear-gradient(90deg, $color1 20px, transparent 1%) 50%, linear-gradient($color1 20px, transparent 1%) 50%, $color2;
+}

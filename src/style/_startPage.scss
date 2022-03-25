@@ -1,0 +1,81 @@
+%ring {
+    mix-blend-mode: difference;
+    position: absolute;
+}
+
+.section__intro {
+    position: relative;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.sarmadi__image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center 15%;
+    object-position: center 15%;
+}
+
+.js__ring__left {
+    @extend %ring;
+    font-size: 6rem;
+    left: 0%;
+    /* top: -100px; */
+}
+
+.js__ring__right {
+    @extend %ring;
+    right: 100px;
+    bottom: 70px;
+    font-size: 10rem;
+}
+
+.react__ring__right {
+    @extend %ring;
+    enable-background: new 0 0 600 600;
+    left: 10%;
+    bottom: 15%;
+    background-blend-mode: multiply;
+    font-size: 10rem
+}
+
+.react__ring__left {
+    @extend %ring;
+    font-size: 10rem;
+    right: 200px;
+    top: 200px;
+}
+
+.sarmadi__title {
+    letter-spacing: -0.0125em;
+    font-weight: 600;
+    font-size: 50px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    line-height: 1;
+    position: relative;
+    z-index: 2;
+    mix-blend-mode: difference;
+    margin: 0;
+    /* margin-top: 2rem; */
+}
+
+.sarmadi__title__2 {
+    color: $gold;
+    margin-top: 0;
+    mix-blend-mode: difference;
+}
+
+.sarmadi__title__1 {
+    color: $skyblue;
+    margin-top: 0;
+    /* margin-bottom: 1.5rem; */
+    mix-blend-mode: difference;
+}

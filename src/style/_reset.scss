@@ -1,0 +1,12 @@
+body {
+    /* background-color: $black; */
+    @include bg($black, #525252);
+    // linear-gradient(90deg, $black 20px, transparent 1%) 50%, linear-gradient($black 20px, transparent 1%) 50%, #222;
+    background-size: 22px 22px;
+    background-attachment: fixed;
+    color: #fff;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    overflow-x: hidden;
+    margin: 0%;
+    padding: 0%;
+}
