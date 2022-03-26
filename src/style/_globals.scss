@@ -1,1 +1,32 @@
-.section {}
+.section {
+    position: relative;
+    // overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+.panel {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.panle__screen__1 {
+    @include PanelScreen($white, #eeeeee)
+}
+
+.panle__screen__2 {
+    @include PanelScreen($black, #525252)
+}
+
+.panle__screen__3 {
+    @include PanelScreen($white, #eeeeee)
+}
+
+.panle__screen__4 {
+    @include PanelScreen($black, #525252)
+}

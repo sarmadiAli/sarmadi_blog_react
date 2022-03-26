@@ -1,21 +1,27 @@
 import React from 'react';
-import StartPage from './components/StartPage';
-import Gsp from './Gsp';
 import RefContext from './context/refContext'
+import Gsp from './Gsp';
+
+import StartPage from './components/StartPage';
+import Panels from './components/Panels'
 function App() {
   const StartPagesRef = React.useRef({})
-  console.log(StartPagesRef)
+  const PanelsRef = React.useRef({})
+  console.log(PanelsRef)
   return (
     <>
       <RefContext.Provider value={{
-        StartPagesRef : StartPagesRef
+        StartPagesRef: StartPagesRef,
+        PanelsRef: PanelsRef
       }}>
 
         <Gsp>
           <section className="section section__intro  ">
-            <StartPage ref={StartPagesRef}/>
+            <StartPage ref={StartPagesRef} />
           </section>
-          <div style={{height:'20000px'}}></div>
+          <section ref={ele => PanelsRef.current['panle__screen'] = ele}   className="section section__panel">
+            <Panels ref={PanelsRef} />
+          </section>
 
         </Gsp>
       </RefContext.Provider >

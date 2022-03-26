@@ -24,7 +24,7 @@ function StartPage(props , ref) {
             <p className="arrow">
                 <span>Scroll</span>
                 <span className="chevron-down">
-                    <i ref={ele => ref.current['arrow__symbols'] = ele} className="arrow__symbols" aria-hidden="true">&dArr;</i>
+                    <i className="arrow__symbols" aria-hidden="true">&dArr;</i>
                 </span>
             </p>
         </>

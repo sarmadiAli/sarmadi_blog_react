@@ -9,17 +9,20 @@ function Gsp(props) {
     }
 
     const context = React.useContext(RefContext)
-    console.log(context)
 
     React.useEffect(() => {
-        const refsCurrent = context.StartPagesRef.current;
+        const refsCurrentStartPage = context.StartPagesRef.current;
+        const refsCurrentPanelsRef = context.PanelsRef.current;
+        /* 
+                gsp for start page
+         */
         gsap.from(
-            refsCurrent.sarmadi__img, {
+            refsCurrentStartPage.sarmadi__img, {
             scale: 1.5,
             transformOrigin: "center center",
             ease: "expo",
             scrollTrigger: {
-                trigger: refsCurrent.sarmadi__img,
+                trigger: refsCurrentStartPage.sarmadi__img,
                 start: "center center",
                 end: "center top",
                 pin: true,
@@ -28,7 +31,7 @@ function Gsp(props) {
         })
 
         gsap.fromTo(
-            refsCurrent.sarmadi__img,
+            refsCurrentStartPage.sarmadi__img,
             { opacity: 0 },
             {
                 opacity: 1,
@@ -36,10 +39,10 @@ function Gsp(props) {
                 ease: "expo.inOut"
             }
         );
-        gsap.to(refsCurrent.react__ring__right, {
+        gsap.to(refsCurrentStartPage.react__ring__right, {
             rotate: "+=360",
             scrollTrigger: {
-                trigger: refsCurrent.react__ring__right,
+                trigger: refsCurrentStartPage.react__ring__right,
                 start: "bottom bottom",
                 end: "bottom top",
                 pin: false,
@@ -47,10 +50,10 @@ function Gsp(props) {
             }
         });
 
-        gsap.to(refsCurrent.react__ring__left, {
+        gsap.to(refsCurrentStartPage.react__ring__left, {
             rotate: 360 * 4,
             scrollTrigger: {
-                trigger: refsCurrent.react__ring__left,
+                trigger: refsCurrentStartPage.react__ring__left,
                 start: "top bottom",
                 end: "bottom top",
                 pin: false,
@@ -58,11 +61,11 @@ function Gsp(props) {
 
             }
         });
-        gsap.to(refsCurrent.js__ring__left, {
+        gsap.to(refsCurrentStartPage.js__ring__left, {
             scale: 1.2,
             ease: "power4",
             scrollTrigger: {
-                trigger: refsCurrent.js__ring__left,
+                trigger: refsCurrentStartPage.js__ring__left,
                 start: "center+=100% center+=25%",
                 end: "bottom+=300 top+=10%",
                 // pin: true,
@@ -73,30 +76,58 @@ function Gsp(props) {
         });
 
 
-    gsap.to(refsCurrent.sarmadi__title__1, {
-        xPercent: -50,
-        scrollTrigger: {
-          trigger: refsCurrent.sarmadi__title__1,
-          start: "center center",
-          pin: true,
-          scrub: 0.5,
-  
-  
-        }
-      });
-  
-      gsap.to(refsCurrent.sarmadi__title__2, {
-        xPercent: 50,
-        scrollTrigger: {
-          trigger: refsCurrent.sarmadi__title__2,
-          start: "center center",
-          end: "bottom top",
-          pin: true,
-          scrub: 0.5,
-  
-        }
-      });
- 
+        gsap.to(refsCurrentStartPage.sarmadi__title__1, {
+            xPercent: -50,
+            scrollTrigger: {
+                trigger: refsCurrentStartPage.sarmadi__title__1,
+                start: "center center",
+                pin: true,
+                scrub: 0.5,
+
+
+            }
+        });
+
+        gsap.to(refsCurrentStartPage.sarmadi__title__2, {
+            xPercent: 50,
+            scrollTrigger: {
+                trigger: refsCurrentStartPage.sarmadi__title__2,
+                start: "center center",
+                end: "bottom top",
+                pin: true,
+                scrub: 0.5,
+
+            }
+        });
+        /* 
+                        gsp for panles page
+                 */
+        const nTl = gsap.timeline();
+
+        const tl = gsap.timeline();
+        tl.from(refsCurrentPanelsRef?.panle__screen__2, { xPercent: -100 })
+            .from(refsCurrentPanelsRef?.panle__screen__3, { xPercent: 100 })
+            .from(refsCurrentPanelsRef?.panle__screen__4, { yPercent: -100 })
+        // .from('.one' ,{y : 350})
+        ScrollTrigger.create({
+            animation: tl,
+            trigger: refsCurrentPanelsRef?.panle__screen,
+            start: "top top",
+            end: "+=4000",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1
+        });
+        ScrollTrigger.create({
+            animation: nTl,
+            trigger: refsCurrentPanelsRef?.panle__screen,
+            start: "right 1px",
+            end: "bottom bottom",
+            markers: false,
+            yoyo: true,
+            ease: "sine.inOut",
+            scrub: 1
+        });
     }, [])
     return (
         <>

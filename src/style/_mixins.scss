@@ -2,3 +2,24 @@
     // code here
     background: linear-gradient(90deg, $color1 20px, transparent 1%) 50%, linear-gradient($color1 20px, transparent 1%) 50%, $color2;
 }
+
+//responsive mixin
+@mixin MediaQuery($screen) {
+    @media screen and (max-width: $screen) {
+        @content;
+    }
+}
+
+//font-size mixin
+@mixin FontSize($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+}
+
+//panel Screen
+@mixin PanelScreen($color1, $color2) {
+    @include bg($color1, $color2);
+    height: 100vh;
+    background-size: 22px 22px;
+    // overflow-x: hidden;
+}
