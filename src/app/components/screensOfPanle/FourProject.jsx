@@ -8,7 +8,6 @@ export default function ProjectPanel() {
       <main className="grid">
         <section className="content_box item1">
           <h1>Projects</h1>
-          {/* <p>By animating a few CSS paint & composite properties, we can create fun interactions on hover & focus</p> */}
         </section>
         <section className="card_box item2">
         <div>
@@ -16,7 +15,6 @@ export default function ProjectPanel() {
              Un Project
             </h3>
             <p>
-              NextJs.redux
             </p>
           </div>
           <a href="" >
@@ -32,7 +30,6 @@ export default function ProjectPanel() {
               Iranian electrical machine : The second  phase of the project
             </h3>
             <p>
-              react.redux..redux-toolkit and matrial ui--nodejs realtime
             </p>
           </div>
           <a href="" >
@@ -45,7 +42,6 @@ export default function ProjectPanel() {
               fadak project
             </h3>
             <p>
-              react__redux__redux-toolkit__matrial ui__
             </p>
           </div>
           <a href="" >
@@ -58,7 +54,6 @@ export default function ProjectPanel() {
               Sima Project
             </h3>
             <p>
-              react__redux__redux-toolkit__matrial ui__
             </p>
           </div>
           <a href="" >
@@ -83,7 +78,6 @@ export default function ProjectPanel() {
               React teacher
             </h3>
             <p>
-              react__redux__redux-toolkit__matrial ui__
             </p>
           </div>
           <a href="" >

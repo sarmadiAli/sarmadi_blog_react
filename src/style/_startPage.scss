@@ -97,7 +97,7 @@
         @include FontSize(25px, 500);
     }
     @include MediaQuery(600px) {
-        @include FontSize(10px, 600);
+        @include FontSize(20px, 600);
     }
 }
 

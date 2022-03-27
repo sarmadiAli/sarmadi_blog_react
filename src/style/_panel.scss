@@ -177,10 +177,12 @@
         border-radius: 0.7em;
         opacity: 0.6;
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: flex-end;
+        flex-direction: column;
         transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
         transition-property: background, transform, color, opacity;
+        font-size: 16px;
     }
     
     .card_box:not(:empty):before {
@@ -394,6 +396,12 @@
     /* --------- Responsive ---------- */
     
     @include MediaQuery(600px) {
+        .item4 {
+            font-size: 14px;
+        }
+        .item8 {
+            font-size: 14px;
+        }
         .grid {
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(6, minmax(auto, 300px));
@@ -408,5 +416,40 @@
         }
         .card_box:empty {
             display: none;
+        }
+        /* Place the timelime to the left */
+        .timeline::after {
+            left: 31px;
+        }
+        /* Full-width container_timeLines */
+        .container_timeLine {
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 25px;
+        }
+        /* Make sure that all arrows are pointing leftwards */
+        .container_timeLine::before {
+            left: 60px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        /* Make sure all circles are at the same spot */
+        .left::after,
+        .right::after {
+            left: 15px;
+        }
+        /* Make all right containers behave like the left ones */
+        .right {
+            left: 0% !important;
+        }
+        .left {
+            left: 0%;
+        }
+        .content p {
+            font-size: 12px;
+        }
+        .content h4 {
+            font-size: 16px;
         }
     }
