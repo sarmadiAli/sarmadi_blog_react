@@ -1,46 +1,56 @@
-import React from 'react';
+import React , {useState} from 'react';
 import RefContext from './context/refContext'
 import Gsp from './Gsp';
+import gsap from 'gsap'
 
 import StartPage from './components/StartPage';
 import Panels from './components/Panels'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { Routes, Route, useNavigate} from "react-router-dom";
+
+import Gallert from './components/Gallert';
+
+const RouteHome = ({ PanelsRef, StartPagesRef ,setTl }) => {
+const nav = useNavigate()
+  return (
+    <>
+
+      <section className="section section__intro  ">
+        <StartPage ref={StartPagesRef} />
+      </section>
+      {/* <div onClick={() =>{
+        setTl(tl => ({a:1}))
+         nav('/projects_link')}} style={{height:'250000px'}}>a</div> */}
+    
+        <Panels ref={PanelsRef} />
+
+    </>
+
+  )
+}
 function App() {
   const StartPagesRef = React.useRef({})
   const PanelsRef = React.useRef({})
+  const [tl, setTl] = useState(() => gsap.timeline());
   return (
     <>
       <RefContext.Provider value={{
         StartPagesRef: StartPagesRef,
-        PanelsRef: PanelsRef
+        PanelsRef: PanelsRef,
+        setTl: setTl
       }}>
-        <Router>
-          <Switch>
-            <Route exact path="/">
-              <Gsp>
-                <section className="section section__intro  ">
-                  <StartPage ref={StartPagesRef} />
-                </section>
-                <section ref={ele => PanelsRef.current['panle__screen'] = ele} className="section section__panel">
-                  <Panels ref={PanelsRef} />
-                </section>
- 
-              </Gsp>
-            </Route>
-            <Route path="/projects_link">
-                <div>
-                  a
-                </div>
-            </Route>
+   <Gsp  timeline={tl}>
 
-          </Switch>
 
-        </Router>
+        <Routes>
+          <Route path="/" excat element={<RouteHome  setTl={setTl} StartPagesRef={StartPagesRef} PanelsRef={PanelsRef} />} />
+          <Route path="/projects_link/:id"excat element={<Gallert />} />
+
+
+
+
+        </Routes>
+        </Gsp>
+
 
       </RefContext.Provider >
     </>

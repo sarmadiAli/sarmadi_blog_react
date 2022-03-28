@@ -1,10 +1,14 @@
 import React from 'react'
-
+import { NavLink as RouterNavLink , useNavigate } from "react-router-dom";
 export default function TwoSkill() {
+    
+    let navigate = useNavigate()
+
     return (
         <main className="grid">
             <section className="content_box item1">
                 <h1>Skills</h1>
+
             </section>
             <section className="card_box item2">
                 <span className="icone devicon-materialui-plain  "></span>
